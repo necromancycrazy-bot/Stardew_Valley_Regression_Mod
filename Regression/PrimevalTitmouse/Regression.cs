@@ -333,7 +333,7 @@ namespace PrimevalTitmouse
             {
                 //If enough time has passed, the bed has dried
                 if (body.bed.IsDrying())
-                {
+           {
                     Response[] sleepAttemptResponses = attemptToSleepMenu.responses;
                     if (sleepAttemptResponses.Length == 2)
                     {
@@ -371,6 +371,7 @@ namespace PrimevalTitmouse
                     availableUnderwear.Add("Cloth diaper");
                     underwearAvailableAtShop = true;
                 }
+                bool underwearAvailableAtShop = true;
 
                 if(underwearAvailableAtShop)
                 {
@@ -379,6 +380,7 @@ namespace PrimevalTitmouse
                         Underwear underwear = new Underwear(type, 0.0f, 0.0f, 1);
                         currentShopMenu.forSale.Add(underwear);
                         currentShopMenu.itemPriceAndStock.Add(underwear, new ItemStockInformation(underwear.container.price, 999));
+                        currentShopMenu.itemPriceAndStock.Add(underwear, new ItemStockInformation(1, 999));
                     }
                 }
             }
